@@ -15,14 +15,21 @@
       {{ end }}
 
       <div class="portrait-title">
-        <h2 itemprop="name">{{ $.Site.Params.name }}</h2>
+        <h1 itemprop="name">{{ $.Site.Params.name }}</h2>
         <h3 itemprop="jobTitle">{{ $.Site.Params.role }}</h3>
+        {{ if $.Site.Params.department }}
+        <h4 itemprop="dept" itemscope itemtype="http://schema.org/Organization">
+          {{ with $.Site.Params.department_url }}<a href="{{ . }}" target="_blank" itemprop="url">{{ end }}
+            <span itemprop="name">{{ $.Site.Params.department }}</span>
+          {{ if $.Site.Params.department_url }}</a>{{ end }}
+        </h4>
+        {{ end }}
         {{ if $.Site.Params.organization }}
-        <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+        <h4 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
           {{ with $.Site.Params.organization_url }}<a href="{{ . }}" target="_blank" itemprop="url">{{ end }}
             <span itemprop="name">{{ $.Site.Params.organization }}</span>
           {{ if $.Site.Params.organization_url }}</a>{{ end }}
-        </h3>
+        </h4>
         {{ end }}
       </div>
 
