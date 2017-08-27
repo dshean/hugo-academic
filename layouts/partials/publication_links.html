@@ -7,7 +7,7 @@
 </a>
 {{ end }}
 {{ with $.Params.url_pdf }}
-<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}">
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}" target="_blank">
   {{ i18n "btn_pdf" }}
 </a>
 {{ end }}
@@ -37,7 +37,7 @@
 </a>
 {{ end }}
 {{ range $.Params.url_custom }}
-<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ .url | absURL }}">
+<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ .url | absURL }}" target="_blank">
   {{ .name }}
 </a>
 {{ end }}
