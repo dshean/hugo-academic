@@ -18,6 +18,16 @@
       </span>
     </div>
 
+    {{ if .Params.screenshot}}
+    <div class="screenshot">
+        <br>
+        <br>
+        <a href="{{ .Params.url_video }}">
+            <img src="{{ "/img/" | relURL }}{{ .Params.screenshot }}" itemprop="image">
+        </a>
+    </div>
+    {{end}}
+
     {{ if .Params.abstract }}
       <h3>{{ i18n "abstract" }}</h3>
       <p class="pub-abstract" itemprop="text">{{ .Params.abstract }}</p>
